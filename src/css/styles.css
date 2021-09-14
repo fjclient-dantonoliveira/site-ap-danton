@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+
+/* my custom styles */
+.btn {
+  @apply block rounded-full py-2 px-3 uppercase font-bold cursor-pointer tracking-wider;  
+}
+
+.img-cover {
+  /* parent must be relative */
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+
+.title-2 {
+  @apply text-lg font-bold uppercase;
+}
+
+.destaques-option {
+  @apply flex-grow text-center py-2;
+}
+
+.destaque-ativo {
+  @apply bg-gray-100 font-bold text-sky;
+}
+
+@tailwind utilities;
