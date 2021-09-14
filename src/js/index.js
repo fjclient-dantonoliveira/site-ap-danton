@@ -104,7 +104,7 @@ function showSlides(n) {
 
 setInterval(() => {
   btnNext.click();
-}, 5000);
+}, 3000);
 
 
 
