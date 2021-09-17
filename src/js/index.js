@@ -1,7 +1,7 @@
 /**
  * NAV MENU TOPO E PRIMEIRA TELA
  */
-
+//#region 
 const burger = document.querySelector('#burger');
 const menuWrapper = document.querySelector('#menuWrapper');
 
@@ -21,12 +21,12 @@ burger.addEventListener("click", function () {
 const inicio = document.querySelector('#inicio');
 inicio.style.height = `${window.innerHeight}px`;
 inicio.style.minHeight = '550px';
-
+//#endregion
 
 /**
  * DESTAQUES
  */
-
+//#region 
 const destaques = document.querySelectorAll('.destaques-option');
 const destaqueLazer = document.querySelector('#destaques-lazer');
 const destaqueApartamento = document.querySelector('#destaques-apartamento');
@@ -57,12 +57,12 @@ destaques.forEach((destaque) => {
     }
   })
 });
-
+//#endregion
 
 /**
  * DESTAQUES SLIDER
  */
-
+//#region 
 let slides = document.getElementsByClassName("slide");
 const dots = document.querySelectorAll('.dot');
 let slideIndex = 0;
@@ -105,12 +105,13 @@ function showSlides(n) {
 setInterval(() => {
   btnNext.click();
 }, 3000);
-
+//#endregion
 
 
 /**
  * PLANTAS SLIDER
  */
+//#region
 const planta1 = document.getElementById('planta-jd');
 const planta2 = document.getElementById('planta-tradicional');
 const btnPPrev = document.querySelector('.btn-pprev');
@@ -129,11 +130,12 @@ btnPPrev.addEventListener('click', () => {
   btnPPrev.classList.add('hidden');
   btnPNext.classList.remove('hidden');
 });
-
+//#endregion
 
 /**
  * DATA
  */
+//#region 
 
 const lazerList = [
   ['Salão de Jogos', 'M6 1l1.172.203c-.356 2.245.791 2.519 2.697 2.874 1.469.273 3.131.622 3.131 3.284v.639h-1.183v-.639c0-1.556-.479-1.809-2.163-2.122-2.584-.48-4.097-1.391-3.654-4.239zm15.563 9.38c-.202-.811-.931-1.38-1.767-1.38h-15.592c-.836 0-1.565.569-1.768 1.38-.146.603-2.436 9.824-2.436 10.377 0 1.379 1.094 2.243 2.286 2.243.633 0 1.263-.274 1.83-.781 3.591-3.208 3.77-4.219 4.759-4.219h6.264c.971 0 1.163 1.018 4.745 4.219.567.507 1.197.781 1.83.781 1.192 0 2.286-.864 2.286-2.243 0-.553-2.29-9.774-2.437-10.377zm-12.563 3.62h-2v2h-1v-2h-2v-1h2v-2h1v2h2v1zm4 1h-2v-1h2v1zm2.75-.75c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm1.75 1.75c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm0-3.531c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm1.734 1.781c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75z'],
@@ -213,3 +215,22 @@ for (let i = 0; i < empreendimentoList.length; i++) {
 
 const ulEmpreendimento = document.querySelector('.empreendimento-list');
 ulEmpreendimento.innerHTML = strEmpreendimento;
+//#endregion
+
+/**
+ * CONTATO
+ */
+//#region 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbycAtsrmT0Eoz_vOAHvNYGloEbt7numQ_Jyo7i1fhOs6hnMIPQ/exec'
+const form = document.forms['leads-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      //console.log('Success!', response);
+      window.location.href = "obrigado.html";
+    })
+    .catch(error => console.error('Error!', error.message))
+})
+//#endregion
