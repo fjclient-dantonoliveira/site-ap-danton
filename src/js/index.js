@@ -221,6 +221,7 @@ ulEmpreendimento.innerHTML = strEmpreendimento;
  * CONTATO
  */
 //#region 
+// https://github.com/jamiewilson/form-to-google-sheets
 const scriptURL = 'https://script.google.com/macros/s/AKfycbycAtsrmT0Eoz_vOAHvNYGloEbt7numQ_Jyo7i1fhOs6hnMIPQ/exec'
 const form = document.forms['leads-form']
 
